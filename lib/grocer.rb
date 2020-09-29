@@ -1,16 +1,50 @@
+require 'pry'
+
+# name = wine
+# collection = [{:item=>"DOG FOOD"}, {:item=>"WINE"}, {:item=>"STRYCHNINE"}]
+# key = {:item => "DOG FOOD"}
+
+
 def find_item_by_name_in_collection(name, collection)
-  # Implement me first!
-  #
-  # Consult README for inputs and outputs
+  index = 0
+  
+  collection.each do |gitem| 
+    return gitem if gitem[:item] == name
+    index += 1
 
 end
+nil
+end
+
+
+
+# cart = [{:item=>"TEMPEH", :price=>3.0, :clearance=>true},
+# {:item=>"PEANUTBUTTER", :price=>3.0, :clearance=>true},
+# {:item=>"ALMONDS", :price=>9.0, :clearance=>false}]
 
 def consolidate_cart(cart)
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This returns a new Array that represents the cart. Don't merely
-  # change `cart` (i.e. mutate) it. It's easier to return a new thing.
+  index = 0
+  new_cart = []
 
+  while index < cart.length 
+    current_item = find_item_by_name_in_collection(cart[index][:item], new_cart)
+    if current_item != nil
+      current_item[:count] += 1
+    else current_item = {
+      :item => cart[index][:item],
+      :price => cart[index][:price],
+      :clearance => cart[index][:clearance],
+      :count => 1
+    }
+      new_cart << current_item
+      
+
+
+
+end
+index += 1
+end
+new_cart
 end
 
 
