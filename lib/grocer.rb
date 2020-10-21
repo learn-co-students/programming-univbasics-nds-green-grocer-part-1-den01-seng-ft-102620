@@ -16,7 +16,6 @@ def find_item_by_name_in_collection(name, collection)
 end
 
 def consolidate_cart(cart)
-  index = 0
   count_cart = []
   cart.each do |grocery_item| #iterates through each item in the cart 
     current_item = find_item_by_name_in_collection(grocery_item[:item], count_cart)
