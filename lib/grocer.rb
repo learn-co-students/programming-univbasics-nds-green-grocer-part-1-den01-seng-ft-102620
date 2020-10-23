@@ -2,12 +2,13 @@ require 'pry'
 
 
 def find_item_by_name_in_collection(name, collection)
-  collection.each do |item_info|
-    if name == item_info[:item]
-      return item_info
+  counter = 0 
+  while counter < collection.length
+    if name == collection[counter][:item]
+      return collection[counter]
     end
+    counter += 1 
   end
-  nil
 end
 
 
@@ -29,13 +30,20 @@ def consolidate_cart(cart)
     end
     counter += 1
   end
+  updated_cart
 end
 
-  # Consult README for inputs and outputs
-  #
-  # REMEMBER: This returns a new Array that represents the cart. Don't merely
-  # change `cart` (i.e. mutate) it. It's easier to return a new thing.
 
+
+
+#def find_item_by_name_in_collection(name, collection)
+#  collection.each do |item_info|
+#    if name == item_info[:item]
+#      return item_info
+#    end
+#  end
+#  nil
+#end
 
 #def consolidate_cart(cart)
 #  cart.each_with_object([]) do |(item_info), updated_cart|
@@ -45,7 +53,7 @@ end
 #      updated_cart << {
 #        :item => item_info[:item],
 #        :price => item_info[:price],
-#        :clearance => item_info[:clearance],
+#        :clearance => item_info{:clearance],
 #        :count => 1
 #      }
 #    end
