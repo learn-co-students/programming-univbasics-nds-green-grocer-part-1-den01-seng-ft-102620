@@ -5,10 +5,11 @@ def find_item_by_name_in_collection(name, collection)
   collection.each do |item_info|
     if name == item_info[:item]
       return item_info
-    elsif name != item_info[:item]  
     end
   end
+  nil
 end
+
 
 def consolidate_cart(cart)
   # Consult README for inputs and outputs
