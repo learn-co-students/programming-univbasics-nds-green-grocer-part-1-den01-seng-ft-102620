@@ -1,8 +1,13 @@
-def find_item_by_name_in_collection(name, collection)
-  # Implement me first!
-  #
-  # Consult README for inputs and outputs
+require 'pry' 
 
+
+def find_item_by_name_in_collection(name, collection)
+  collection.each do |item_info|
+    if name == item_info[:item]
+      return item_info
+    elsif name != item_info[:item]  
+    end
+  end
 end
 
 def consolidate_cart(cart)
